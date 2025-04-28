@@ -1,4 +1,5 @@
-import React from 'react';  
+import React from 'react';
+import krishlogo from '../assets/krishlogo.png';
 
 const Footer = () => {   
   return (     
@@ -12,7 +13,7 @@ const Footer = () => {
             <div className="md:w-1/4 mb-6 md:mb-0">               
               <div className="mb-6">                 
                 <img                    
-                  src="/logo.png"                    
+                  src= {krishlogo}                   
                   alt="Wadhwa Events and Exhibits"                    
                   className="h-20"                 
                 />               
@@ -64,7 +65,7 @@ const Footer = () => {
         {/* Copyright bar */}         
         <div className="py-4 border-t border-teal-400">           
           <div className="max-w-6xl mx-auto px-8 text-center text-xs">             
-            © 2024 - All Rights Reserved - Wadhwa Events and Exhibits           
+            © 2025 - All Rights Reserved - Krish Chemicals          
           </div>         
         </div>       
       </footer>     

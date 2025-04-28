@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
+import krishlogo from '../assets/krishlogo.png';
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [isProductsDropdownOpen, setIsProductsDropdownOpen] = useState(false);
 
   // Handle scroll effect for navbar
   useEffect(() => {
@@ -39,10 +41,19 @@ function Navbar() {
     };
   }, [isMenuOpen]);
 
+  // List of products
+  const products = [
+    { id: "01", name: "Pigments" },
+    { id: "02", name: "Dyes" },
+    { id: "03", name: "Pharmaceutical API" },
+    { id: "04", name: "Construction Chemicals" },
+    { id: "05", name: "Packaging Products" },
+  ];
+
   return (
     <header className="w-full fixed top-0 left-0 right-0 z-50 transition-all duration-300 pointer-events-auto">
       <div className={`relative w-full ${scrolled ? "h-[55px]" : "h-[60px]"} transition-all duration-300`}>
-        {/* Remove the background entirely to let the homepage background show through */}
+        {/* Background gradient */}
         <div 
           className="absolute inset-0 transition-all duration-500 bg-opacity-70" 
           style={{
@@ -72,13 +83,12 @@ function Navbar() {
         <div className="relative z-10 container mx-auto h-full flex justify-between items-center">
           {/* Logo section - left side */}
           <div className="flex-shrink-0 ml-4 md:ml-10 transition-all duration-300">
-            <a href="/" className="font-bold text-lg text-white flex items-center">
-              <span className="mr-2">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
-                </svg>
-              </span>
-              Krish Chemicals
+            <a href="/" className="flex items-center">
+              <img 
+                src= {krishlogo} 
+                alt="Krish Chemicals Logo" 
+                className={`${scrolled ? "h-8" : "h-10"} transition-all duration-300`}
+              />
             </a>
           </div>
           
@@ -86,14 +96,52 @@ function Navbar() {
           <div className="hidden md:flex items-center space-x-8 mr-10">
             <NavLink href="/" label="Home" />
             <NavLink href="/about" label="About Us" />
-            <NavLink href="/products" label="Products" />
+            
+            {/* Products dropdown with hover functionality */}
+            <div className="relative products-dropdown group">
+              <button 
+                className="products-dropdown-toggle relative text-white transition duration-300 py-1 flex items-center"
+                onMouseEnter={() => setIsProductsDropdownOpen(true)}
+                onFocus={() => setIsProductsDropdownOpen(true)}
+              >
+                Products
+                <svg 
+                  xmlns="http://www.w3.org/2000/svg" 
+                  className="h-4 w-4 ml-1 transition-transform group-hover:rotate-180" 
+                  fill="none" 
+                  viewBox="0 0 24 24" 
+                  stroke="currentColor"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
+              </button>
+              
+              {/* Products dropdown menu - shows on hover */}
+              <div 
+                className="absolute top-full left-0 mt-1 w-64 bg-white rounded-md shadow-lg py-2 z-50 transition-all duration-200 opacity-0 invisible transform translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0"
+                onMouseLeave={() => setIsProductsDropdownOpen(false)}
+                onBlur={() => setIsProductsDropdownOpen(false)}
+              >
+                {products.map((product) => (
+                  <a 
+                    key={product.id}
+                    href={`/products/${product.id}`} 
+                    className="flex items-center px-4 py-3 text-gray-800 hover:bg-gray-100 transition-colors duration-200"
+                  >
+                    {product.name}
+                  </a>
+                ))}
+              </div>
+            </div>
+            
             <NavLink href="/contactus" label="Contact Us" />
           </div>
           
           {/* Mobile menu button */}
           <div className="md:hidden flex items-center mr-6">
             <button 
-              className="text-white focus:outline-none transition-transform duration-300 ease-in-out menu-button "
+              className="text-white focus:outline-none transition-transform duration-300 ease-in-out menu-button"
               onClick={toggleMenu}
               aria-label="Toggle menu"
             >
@@ -110,7 +158,7 @@ function Navbar() {
           </div>
         </div>
         
-        {/* Mobile menu, redesigned with slide-in from right */}
+        {/* Mobile menu, slide-in from right */}
         <div 
           className={`mobile-menu md:hidden fixed top-0 right-0 h-screen w-3/4 max-w-xs bg-gradient-to-b from-teal-500 to-teal-700 z-50 transform transition-all duration-300 ease-in-out pt-16 shadow-xl ${
             isMenuOpen ? "translate-x-0" : "translate-x-full"
@@ -129,22 +177,38 @@ function Navbar() {
           </div>
           
           <div className="px-6 py-8">
-            <div className="border-b border-teal-400 pb-4 mb-6">
-              <a href="/" className="font-bold text-xl text-white flex items-center justify-center">
-                <span className="mr-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
-                  </svg>
-                </span>
-                Krish Chemicals
+            <div className="border-b border-teal-400 pb-4 mb-6 flex justify-center">
+              <a href="/">
+                <img 
+                  src="/src/assets/krishlogo.png" 
+                  alt="Krish Chemicals Logo" 
+                  className="h-12"
+                />
               </a>
             </div>
             
             <nav className="flex flex-col space-y-1">
               <MobileNavLink href="/" label="Home" onClick={() => setIsMenuOpen(false)} />
               <MobileNavLink href="/about" label="About Us" onClick={() => setIsMenuOpen(false)} />
-              <MobileNavLink href="/products" label="Products" onClick={() => setIsMenuOpen(false)} />
-              <MobileNavLink href="/contact" label="Contact Us" onClick={() => setIsMenuOpen(false)} />
+              
+              {/* Mobile Products Section */}
+              <div className="border-t border-teal-400 pt-2 mt-2">
+                <div className="px-4 py-2 text-white text-sm font-medium">Products</div>
+                <div className="pl-4">
+                  {products.map((product) => (
+                    <a 
+                      key={product.id}
+                      href={`/products/${product.id}`} 
+                      onClick={() => setIsMenuOpen(false)}
+                      className="block py-2 px-4 text-sm text-white hover:bg-teal-600 hover:rounded-md transition-all duration-200"
+                    >
+                      {product.name}
+                    </a>
+                  ))}
+                </div>
+              </div>
+              
+              <MobileNavLink href="/contactus" label="Contact Us" onClick={() => setIsMenuOpen(false)} />
             </nav>
             
             <div className="mt-auto pt-8 border-t border-teal-400 mt-8">

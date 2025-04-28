@@ -4,6 +4,7 @@ import backgroundImage from '../assets/homebg.jpg'; // Adjust path as needed
 import AboutUs from '../components/aboutcompany';
 import Products from '../components/ProductSection';
 import BusinessBanner from '../components/BusinessBanner';
+import StatsCounter from '../components/statscounter';
 
 const HomePage = () => {
   const [lineAnimated, setLineAnimated] = useState(false);
@@ -100,6 +101,8 @@ const HomePage = () => {
       
       {/* About Us section - positioned below the hero section */}
       <AboutUs/>
+
+      <StatsCounter/>
       
       {/* Products section */}
       <Products/>

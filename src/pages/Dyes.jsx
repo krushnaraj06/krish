@@ -20,7 +20,7 @@ const Dyes = () => {
             {/* Tabbed product catalog */}
             <section className="py-12 px-4">
                 <div className="container mx-auto">
-                    <h2 className="text-2xl font-bold text-center mb-8">Our Product Catalog</h2>
+                   
                     <TabbedProductDisplay />
                 </div>
             </section>

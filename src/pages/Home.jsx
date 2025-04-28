@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import backgroundImage from '../assets/homebg.jpg'; // Adjust path as needed
 import AboutUs from '../components/aboutcompany';
 import Products from '../components/ProductSection';
+import BusinessBanner from '../components/BusinessBanner';
 
 const HomePage = () => {
   const [lineAnimated, setLineAnimated] = useState(false);
@@ -102,6 +103,8 @@ const HomePage = () => {
       
       {/* Products section */}
       <Products/>
+
+      <BusinessBanner/>
     </div>
   );
 };

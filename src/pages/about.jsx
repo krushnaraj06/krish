@@ -1,10 +1,21 @@
 import React from 'react';
 import labimage from '../assets/labimage.png';
-
+import ProductShowcase from '../components/ProductShowCase';
+import about from "../assets/aboutus.png";
 
 const AboutUs = () => {
   return (
     <div className="bg-gray-50 min-h-screen">
+              <ProductShowcase 
+  title="About Us"
+  description="Krish Chemicals LLC is a privately owned trading firm based in Rockford, Illinois, USA, specializing in a diverse range of industrial chemicals and packaging products. With a strong foundation in chemical manufacturing and trading, we bridge the gap between leading manufacturers and end-users, delivering quality, consistency, and trust.
+
+"
+  additionalText="We offer an extensive portfolio of industrial chemicals including Pigments, Dyes, Pharmaceutical APIs and Intermediates, Food Colors, Construction Chemicals, and General Chemicals. In addition, we provide a wide range of industrial packaging solutions such as Jumbo Bags, Shrink Films, Bubble Wraps, HDPE Bags, and Paper Bags to meet varied industry needs."
+  imageSrc= {about} 
+  imageAlt="Collection of colorful pigment bottles"
+  reversed={false} // Optional: set to true to switch layout direction
+/>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Hero Section - Plain background */}
         <div className="mb-16">

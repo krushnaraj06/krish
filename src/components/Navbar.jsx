@@ -87,7 +87,7 @@ function Navbar() {
             <NavLink href="/" label="Home" />
             <NavLink href="/about" label="About Us" />
             <NavLink href="/products" label="Products" />
-            <NavLink href="/contact" label="Contact Us" />
+            <NavLink href="/contactus" label="Contact Us" />
           </div>
           
           {/* Mobile menu button */}

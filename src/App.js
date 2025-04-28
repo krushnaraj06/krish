@@ -4,7 +4,6 @@ import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Footer from './components/Footer';
 import ContactUs from './pages/Contactus';
-import AboutUs from './pages/about';
 
 function App() {
   return (
@@ -16,7 +15,11 @@ function App() {
         <Route path="/about" element={<AboutUs/>} />
         <Route path="/services" element={<div>Services Page</div>} />
         <Route path="/contactus" element={<ContactUs/>} />
-        
+        <Route path='/pigment' element={<PigmentsPage/>}/>
+        <Route path='/Pharmaceutical' element={<Pharmaceutical/>}/>
+        <Route path='/construction' element={<ConstructionChemicals/>}/>
+        <Route path='/packaging' element={<ProductPackaging/>}/>
+        <Route path='/dyes' element={<Dyes/>}/>
       </Routes>
       <Footer/>
     </Router>

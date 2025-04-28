@@ -9,7 +9,7 @@ import Pharmaceutical from './pages/Pharmaceutical';
 import ConstructionChemicals from './pages/ConstructionChemicals';
 import ProductPackaging from './pages/ProductPackaging';
 import Dyes from './pages/Dyes';
-import AboutUs from './components/aboutcompany';
+import AboutUs from './pages/about';
 
 
 function App() {

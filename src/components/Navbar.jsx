@@ -43,11 +43,11 @@ function Navbar() {
 
   // List of products
   const products = [
-    { id: "01", name: "Pigments" },
-    { id: "02", name: "Dyes" },
-    { id: "03", name: "Pharmaceutical API" },
-    { id: "04", name: "Construction Chemicals" },
-    { id: "05", name: "Packaging Products" },
+    { id: "01", name: "pigment" },
+    { id: "02", name: "dyes" },
+    { id: "03", name: "Pharmaceutical" },
+    { id: "04", name: "construction" },
+    { id: "05", name: "packaging" },
   ];
 
   return (

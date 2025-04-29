@@ -43,11 +43,11 @@ function Navbar() {
 
   // List of products
   const products = [
-    { id: "01", name: "pigment" },
-    { id: "02", name: "dyes" },
-    { id: "03", name: "Pharmaceutical" },
-    { id: "04", name: "construction" },
-    { id: "05", name: "packaging" },
+    { id: "01", name: "PIGMENT" },
+    { id: "02", name: "DYES" },
+    { id: "03", name: "PHARMACEUTICLE" },
+    { id: "04", name: "CONSTRUCTION" },
+    { id: "05", name: "PACKAGING" },
   ];
 
   return (
@@ -180,7 +180,7 @@ function Navbar() {
             <div className="border-b border-teal-400 pb-4 mb-6 flex justify-center">
               <a href="/">
                 <img 
-                  src="/src/assets/krishlogo.png" 
+                  src={krishlogo}
                   alt="Krish Chemicals Logo" 
                   className="h-12"
                 />
@@ -193,7 +193,7 @@ function Navbar() {
               
               {/* Mobile Products Section */}
               <div className="border-t border-teal-400 pt-2 mt-2">
-                <div className="px-4 py-2 text-white text-sm font-medium">Products</div>
+                <div className="px-4 py-2 text-black text-sm font-medium">Products</div>
                 <div className="pl-4">
                   {products.map((product) => (
                     <a 

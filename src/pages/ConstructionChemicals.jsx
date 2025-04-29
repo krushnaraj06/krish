@@ -2,6 +2,7 @@ import React from "react";
 import BusinessBanner from "../components/BusinessBanner";
 import ProductShowcase from "../components/ProductShowCase";
 import construction from "../assets/construction.png";
+import FabricImageBanner from "../components/PurpleFabric";
 
 const ConstructionChemicals = () => {
   // Construction chemicals product data
@@ -58,6 +59,8 @@ const ConstructionChemicals = () => {
         imageAlt="Collection of colorful pigment bottles"
         reversed={false}
       />
+
+      <FabricImageBanner/>
 
       {/* Construction Chemicals Table */}
       <div className="max-w-6xl mx-auto px-4 py-16">

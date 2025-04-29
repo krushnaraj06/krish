@@ -30,9 +30,9 @@ const BusinessBanner = () => {
           </p>
           
           <div className="flex justify-center">
-            <button className="bg-white text-blue-700 font-medium py-3 px-8 rounded hover:bg-blue-100 transition duration-300">
+            <a href='/contactus' className="bg-white text-blue-700 font-medium py-3 px-8 rounded hover:bg-blue-100 transition duration-300">
               Connect With Us
-            </button>
+            </a>
           </div>
         </div>
       </div>

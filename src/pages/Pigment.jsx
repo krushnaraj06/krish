@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import ProductShowcase from '../components/ProductShowCase';
 import imgpigment from "../assets/pigment.png";
-import Footer from '../components/Footer';
 import BusinessBanner from '../components/BusinessBanner';
 
-const PigmentsPage = () => {
+const Pigment = () => {
   const [searchTerm, setSearchTerm] = useState('');
   
   // Complete pigment data from the provided images
@@ -204,4 +203,4 @@ const PigmentsPage = () => {
   );
 };
 
-export default PigmentsPage;
+export default Pigment;

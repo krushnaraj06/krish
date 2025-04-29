@@ -21,7 +21,7 @@ function App() {
         {/* Add other routes here */}
         <Route path="/about" element={<AboutUs/>} />
         <Route path="/contactus" element={<ContactUs/>} />
-        <Route path='/products/01 ' element={<PigmentsPage/>}/>
+        <Route path='/products/01' element={<PigmentsPage/>}/>
         <Route path='/products/03' element={<Pharmaceutical/>}/>
         <Route path='/products/04' element={<ConstructionChemicals/>}/>
         <Route path='/products/05' element={<ProductPackaging/>}/>

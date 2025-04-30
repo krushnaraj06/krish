@@ -23,14 +23,14 @@ const CounterItem = ({ value, label, hasImage = false }) => {
   }, [value]);
   
   return (
-    <div className="flex flex-col items-center px-8 mt-6">
-      <div className="relative text-6xl font-bold mb-2 flex items-center">
+    <div className="flex flex-col items-center px-2 sm:px-4 md:px-8 mt-6 w-full">
+      <div className="relative text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-2 flex items-center">
         {count}
-        <span className="text-blue-500 text-4xl">
+        <span className="text-blue-500 text-2xl sm:text-3xl md:text-4xl">
           {value === 100 ? "%" : "+"}
         </span>
       </div>
-      <div className="text-xs uppercase tracking-wider text-gray-600 text-center">
+      <div className="text-xxs xs:text-xs uppercase tracking-wider text-gray-600 text-center">
         {label}
       </div>
     </div>
@@ -39,8 +39,8 @@ const CounterItem = ({ value, label, hasImage = false }) => {
 
 const StatsCounter = () => {
   return (
-    <div className="w-full max-w-4xl mx-auto">
-      <div className="flex justify-center items-start divide-x divide-gray-300">
+    <div className="w-full max-w-4xl mx-auto py-4">
+      <div className="flex flex-col sm:flex-row justify-center items-center sm:items-start sm:divide-x divide-gray-300">
         <CounterItem value={50} label="PRODUCTS IN OUR PORTFOLIO" />
         <CounterItem value={100} label="QUALITY ASSURANCE" />
         <CounterItem value={15} label="YEARS OF INDUSTRY EXPERIENCE" />

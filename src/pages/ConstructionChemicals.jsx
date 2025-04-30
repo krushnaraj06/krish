@@ -62,47 +62,49 @@ const ConstructionChemicals = () => {
 
       <FabricImageBanner/>
 
-      {/* Construction Chemicals Table */}
+      {/* Construction Chemicals Table - Responsive Version */}
       <div className="max-w-6xl mx-auto px-4 py-16">
         <h2 className="text-5xl font-light mb-10">
           <span className="text-gray-600">Construction</span>{" "}
           <span className="text-yellow-400">Chemical</span>
         </h2>
         
-        <div className="overflow-hidden rounded-sm">
-          <table className="w-full border-collapse">
-            <thead>
-              <tr>
-                <th className="w-16 bg-yellow-400 border border-white text-center py-3 px-4"></th>
-                <th className="bg-yellow-400 border border-white text-white text-2xl font-normal py-3 px-6 text-left">
-                  PRODUCT NAME
-                </th>
-                <th className="bg-yellow-400 border border-white text-white text-2xl font-normal py-3 px-6 text-left">
-                  CHEMICAL NAME
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              {constructionProducts.map((product, index) => (
-                <tr key={index} className={index % 2 === 0 ? "bg-gray-100" : "bg-white"}>
-                  <td className="border border-gray-200 p-4"></td>
-                  <td className="border border-gray-200 p-4">
-                    <div className="text-gray-700 text-xl font-normal">
-                      {product.productName}
-                    </div>
-                    <div className="text-red-500 font-normal mt-1">
-                      CAS No. {product.casNo}
-                    </div>
-                  </td>
-                  <td className="border border-gray-200 p-4">
-                    <div className="text-gray-600 text-xl font-normal">
-                      {product.chemicalName}
-                    </div>
-                  </td>
+        <div className="overflow-x-auto">
+          <div className="inline-block min-w-full shadow-md rounded-sm">
+            <table className="min-w-full">
+              <thead>
+                <tr>
+                  <th className="w-12 md:w-16 bg-yellow-400 border border-white text-center py-2 md:py-3 px-2 md:px-4"></th>
+                  <th className="bg-yellow-400 border border-white text-white text-lg md:text-2xl font-normal py-2 md:py-3 px-3 md:px-6 text-left">
+                    PRODUCT NAME
+                  </th>
+                  <th className="bg-yellow-400 border border-white text-white text-lg md:text-2xl font-normal py-2 md:py-3 px-3 md:px-6 text-left">
+                    CHEMICAL NAME
+                  </th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {constructionProducts.map((product, index) => (
+                  <tr key={index} className={index % 2 === 0 ? "bg-gray-100" : "bg-white"}>
+                    <td className="border border-gray-200 p-2 md:p-4"></td>
+                    <td className="border border-gray-200 p-2 md:p-4">
+                      <div className="text-gray-700 text-base md:text-xl font-normal">
+                        {product.productName}
+                      </div>
+                      <div className="text-red-500 text-sm md:text-base font-normal mt-1">
+                        CAS No. {product.casNo}
+                      </div>
+                    </td>
+                    <td className="border border-gray-200 p-2 md:p-4">
+                      <div className="text-gray-600 text-base md:text-xl font-normal">
+                        {product.chemicalName}
+                      </div>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
 

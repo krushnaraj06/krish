@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-
-
 const PackagingProductDisplay = () => {
   const [activeTab, setActiveTab] = useState(0);
   
@@ -55,7 +53,7 @@ const PackagingProductDisplay = () => {
             key={index}
             className={`flex-shrink-0 px-5 py-3 font-medium text-sm transition-colors duration-200 relative ${
               activeTab === index
-                ? 'text-red-500'
+                ? 'text-[#34A0A4]'
                 : 'text-gray-600 hover:text-gray-800'
             }`}
             onClick={() => setActiveTab(index)}
@@ -63,7 +61,7 @@ const PackagingProductDisplay = () => {
             {product.title}
             {activeTab === index && (
               <motion.div
-                className="absolute bottom-0 left-0 h-0.5 w-full bg-red-500"
+                className="absolute bottom-0 left-0 h-0.5 w-full bg-[#34A0A4]"
                 layoutId="activeTab"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -87,7 +85,7 @@ const PackagingProductDisplay = () => {
           >
             {/* Product Description Text */}
             <motion.div 
-              className="w-full mb-4 text-center"
+              className="w-full mb-4 text-center px-4"
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
@@ -99,7 +97,7 @@ const PackagingProductDisplay = () => {
 
             {/* Product Image with Animation */}
             <motion.div 
-              className="w-full max-w-3xl mx-auto"
+              className="w-full max-w-3xl mx-auto px-4"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
@@ -119,4 +117,4 @@ const PackagingProductDisplay = () => {
   );
 };
 
-export default PackagingProductDisplay; 
+export default PackagingProductDisplay;

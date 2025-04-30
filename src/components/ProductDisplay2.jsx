@@ -9,13 +9,15 @@ const dyeData = {
     productTable: {
       headers: ["Colour", "Product Name", "Case No.", "Other Name"],
       rows: [
-        ["", "REACTIVE BLUE 21 - 133%", "73049-92-0", "REACTIVE BLUE G"],
-        ["", "REACTIVE BLUE 21 - 160%", "73049-92-0", "REACTIVE BLUE G"],
-        ["", "REACTIVE BLUE 21 - 190%", "73049-92-0", "REACTIVE BLUE G"],
-        ["", "REACTIVE BLUE 21 - 266%", "73049-92-0", "REACTIVE BLUE G"],
-        ["", "REACTIVE BLUE 25", "12236-87-2", "REACTIVE BLUE H5G"],
-        ["", "REACTIVE BLUE 71", "12677-15-5", "REACTIVE BLUE HA"],
-        ["", "REACTIVE BLUE 72", "61968-93-2", "REACTIVE BLUE PGR"]
+        // For each product, add custom colors for 1% and 4% samples
+        // Format: ["", "Product Name", "CAS No.", "Other Name", "1% color", "4% color"]
+        ["", "REACTIVE BLUE 21 - 133%", "73049-92-0", "REACTIVE BLUE G", "#BBDEFB", "#2196F3"],
+        ["", "REACTIVE BLUE 21 - 160%", "73049-92-0", "REACTIVE BLUE G", "#90CAF9", "#1E88E5"],
+        ["", "REACTIVE BLUE 21 - 190%", "73049-92-0", "REACTIVE BLUE G", "#64B5F6", "#1976D2"],
+        ["", "REACTIVE BLUE 21 - 266%", "73049-92-0", "REACTIVE BLUE G", "#42A5F5", "#1565C0"],
+        ["", "REACTIVE BLUE 25", "12236-87-2", "REACTIVE BLUE H5G", "#29B6F6", "#0D47A1"],
+        ["", "REACTIVE BLUE 71", "12677-15-5", "REACTIVE BLUE HA", "#03A9F4", "#0277BD"],
+        ["", "REACTIVE BLUE 72", "61968-93-2", "REACTIVE BLUE PGR", "#00B0FF", "#01579B"]
       ]
     }
   },
@@ -124,14 +126,20 @@ const dyeData = {
 const TabbedProductDisplay = () => {
   const [activeTab, setActiveTab] = useState(0);
   const tabs = Object.values(dyeData);
+  
+  // Teal color constants
+  const tealPrimary = "#34A0A4";
+  const tealLight = "#B2E4E6";
+  const tealLighter = "#E0F5F6";
+  const tealDark = "#2C8A8E";
 
-  // Function to render the table with exact blue shades
+  // Function to render the table with appropriate colors
   const renderTable = (tableData, index) => {
     if (!tableData) return null;
 
-    // First tab (index 0) gets the blue style, all others get the simple style
+    // First tab (index 0) gets the blue style (original colors), all others get the simple style with teal accents
     if (index === 0) {
-      // Blue style table with exact color shades from the image
+      // Custom color samples for Reactive Dyes table
       return (
         <div className="bg-blue-100 p-6 rounded-lg shadow-md border border-blue-200">
           <div className="border-2 border-white rounded shadow-lg overflow-hidden">
@@ -177,19 +185,21 @@ const TabbedProductDisplay = () => {
               <tbody>
                 {tableData.rows.map((row, rowIndex) => (
                   <tr key={rowIndex}>
-                    {/* 1% Column */}
+                    {/* 1% Column - Custom color from data */}
                     <td className="p-0 m-0 border border-white">
                       <div 
-                        className="w-full h-full min-h-[45px] flex items-center justify-center bg-blue-200"
+                        className="w-full h-full min-h-[45px] flex items-center justify-center"
+                        style={{ backgroundColor: row[4] || '#BBDEFB' }} // Use custom color or default
                       >
                         {rowIndex === 0 ? "1%" : ""}
                       </div>
                     </td>
                     
-                    {/* 4% Column */}
+                    {/* 4% Column - Custom color from data */}
                     <td className="p-0 m-0 border border-white">
                       <div 
-                        className="w-full h-full min-h-[45px] flex items-center justify-center bg-blue-500"
+                        className="w-full h-full min-h-[45px] flex items-center justify-center"
+                        style={{ backgroundColor: row[5] || '#2196F3' }} // Use custom color or default
                       >
                         {rowIndex === 0 ? "4%" : ""}
                       </div>
@@ -217,16 +227,16 @@ const TabbedProductDisplay = () => {
         </div>
       );
     } else {
-      // Simple style table for all other tabs
+      // Simple style table for all other tabs, but with teal accent
       return (
-        <div className="mt-6 rounded overflow-hidden shadow-md border-t-4 border-blue-500">
+        <div className="mt-6 rounded overflow-hidden shadow-md border-t-4 border-[#34A0A4]">
           <table className="min-w-full divide-y divide-gray-200">
-            <thead className="bg-gray-50">
+            <thead className="bg-[#E0F5F6]">
               <tr>
                 {tableData.headers.map((header, idx) => (
                   <th
                     key={idx}
-                    className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                    className="px-6 py-3 text-left text-xs font-medium text-[#2C8A8E] uppercase tracking-wider"
                   >
                     {header}
                   </th>
@@ -262,7 +272,7 @@ const TabbedProductDisplay = () => {
             key={index}
             className={`flex-shrink-0 px-5 py-3 font-medium text-sm transition-colors duration-200 relative ${
               activeTab === index
-                ? 'text-blue-600'
+                ? 'text-[#34A0A4]'
                 : 'text-gray-600 hover:text-gray-800'
             }`}
             onClick={() => setActiveTab(index)}
@@ -270,7 +280,7 @@ const TabbedProductDisplay = () => {
             {tab.title}
             {activeTab === index && (
               <motion.div
-                className="absolute bottom-0 left-0 h-0.5 w-full bg-blue-600"
+                className="absolute bottom-0 left-0 h-0.5 w-full bg-[#34A0A4]"
                 layoutId="activeTab"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -302,6 +312,7 @@ const TabbedProductDisplay = () => {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
+                className="overflow-x-auto"
               >
                 {renderTable(tabs[activeTab].productTable, activeTab)}
               </motion.div>

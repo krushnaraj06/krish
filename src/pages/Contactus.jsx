@@ -217,19 +217,8 @@ const ContactUs = () => {
       </form>
 
       {/* Contact Information Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-16">
-        <div className="bg-white rounded-lg shadow-lg p-6 flex flex-col items-center">
-          <div className="text-teal-500 mb-4" style={{ color: 'rgb(20, 184, 166)' }}>
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-            </svg>
-          </div>
-          <h3 className="font-bold text-gray-800 uppercase text-sm mb-2">CORPORATE OFFICE</h3>
-          <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" className="text-teal-500 text-xs font-medium mt-3" style={{ color: 'rgb(20, 184, 166)' }}>
-            VIEW ON GOOGLE MAP
-          </a>
-        </div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-16">
+    
 
         <div className="bg-white rounded-lg shadow-lg p-6 flex flex-col items-center">
           <div className="text-teal-500 mb-4" style={{ color: 'rgb(20, 184, 166)' }}>
@@ -250,8 +239,8 @@ const ContactUs = () => {
             </svg>
           </div>
           <h3 className="font-bold text-gray-800 uppercase text-sm mb-2">LET'S TALK</h3>
-          <a href="tel:+919090547964" className="text-teal-500 text-xs mt-1" style={{ color: 'rgb(20, 184, 166)' }}>+91 9090 547964</a>
-          <a href="tel:+919752432907" className="text-teal-500 text-xs mt-1" style={{ color: 'rgb(20, 184, 166)' }}>+91 9752 432907</a>
+          <a href="tel:+919090547964" className="text-teal-500 text-xs mt-1" style={{ color: 'rgb(20, 184, 166)' }}>+1(267)901880</a>
+          <a href="tel:+919752432907" className="text-teal-500 text-xs mt-1" style={{ color: 'rgb(20, 184, 166)' }}>+1(815)3294126 </a>
         </div>
 
         <div className="bg-white rounded-lg shadow-lg p-6 flex flex-col items-center">

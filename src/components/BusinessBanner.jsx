@@ -18,8 +18,8 @@ const BusinessBanner = () => {
       <div className="relative px-8 py-20">
         <div className="bg-blue-800 bg-opacity-50 rounded-lg p-12 mx-auto max-w-4xl text-center">
           <h1 className="text-5xl font-serif mb-6">
-            <span className="text-white">Creativity For </span>
-            <span className="text-green-400">Eternity</span>
+            <span className="text-white">Products For </span>
+            <span className="text-green-400">Performance</span>
           </h1>
           
           <p className="text-white text-lg mb-2">

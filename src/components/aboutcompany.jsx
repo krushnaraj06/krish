@@ -9,7 +9,7 @@ const AboutUs = () => {
       {/* Header with line */}
       
       {/* Main content section */}
-      <div className="container mx-auto px-4 md:px-8 py-12">
+      <div className="container mx-auto px-4 md:px-8 py-10">
         <div className="flex flex-col md:flex-row justify-between items-start gap-12">
           {/* Left side - Text content */}
           <div className="w-full md:w-2/3">

@@ -5,6 +5,7 @@ import AboutUs from '../components/aboutcompany';
 import Products from '../components/ProductSection';
 import BusinessBanner from '../components/BusinessBanner';
 import StatsCounter from '../components/statscounter';
+import VideoGridLayout from '../components/VideoGridLayout';
 
 const HomePage = () => {
   const [lineAnimated, setLineAnimated] = useState(false);
@@ -104,9 +105,10 @@ const HomePage = () => {
 
       <StatsCounter/>
       
+  
       {/* Products section */}
       <Products/>
-
+      <VideoGridLayout/>
       <BusinessBanner/>
     </div>
   );

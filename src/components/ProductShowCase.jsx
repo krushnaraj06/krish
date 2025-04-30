@@ -7,8 +7,8 @@ const ProductShowcase = ({
   additionalText,
   imageSrc,
   imageAlt,
-  titleColor = "blue",
-  glowColor = "rgba(0, 0, 255, 0.6)",
+  titleColor = "#34A0A4",
+  glowColor = "rgba(118, 200, 147, 1)",
 }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, threshold: 0.2 });

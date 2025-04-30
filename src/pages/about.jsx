@@ -2,6 +2,8 @@ import React from 'react';
 import labimage from '../assets/labimage.png';
 import ProductShowcase from '../components/ProductShowCase';
 import about from "../assets/aboutus.png";
+import VideoGridLayout from '../components/VideoGridLayout';
+import TailwindCard from '../components/Card';
 
 const AboutUs = () => {
   return (
@@ -96,10 +98,14 @@ const AboutUs = () => {
       </li>
     </ul>
   
-            
+         
            
             </div>
+
           </div>
+        </div>
+        <div className=''>
+        <TailwindCard/>
         </div>
       </div>
   

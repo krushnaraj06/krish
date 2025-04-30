@@ -2,6 +2,7 @@ import React from "react";
 import BusinessBanner from "../components/BusinessBanner";
 import ProductShowcase from "../components/ProductShowCase";
 import Pharma from "../assets/pharma.jpg";
+import FabricImageBanner from "../components/PurpleFabric";
 
 const Pharmaceutical = () => {
   // Pharmaceutical product data
@@ -26,6 +27,8 @@ const Pharmaceutical = () => {
         imageAlt="Collection of colorful pigment bottles"
         reversed={false}
       />
+
+      <FabricImageBanner/>
 
       {/* Pharmaceutical Products Table */}
       <div className="max-w-6xl mx-auto px-4 py-16">

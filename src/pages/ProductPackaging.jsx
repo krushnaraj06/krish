@@ -3,6 +3,7 @@ import BusinessBanner from "../components/BusinessBanner";
 import ProductShowcase from "../components/ProductShowCase";
 import TabbedProductDisplay from "../components/ProductDisplay";
 import packagingimg from "../assets/packaging.png";
+import FabricImageBanner from '../components/PurpleFabric';
 
 const ProductPackaging = () => {
   // Updated tab data structure for the exact color display
@@ -17,6 +18,8 @@ const ProductPackaging = () => {
         imageAlt="Collection of colorful dye samples"
         reversed={false}
       />
+
+      <FabricImageBanner/>
       
       <div className="my-12">
         <TabbedProductDisplay/>

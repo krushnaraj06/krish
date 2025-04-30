@@ -3,6 +3,7 @@ import BusinessBanner from "../components/BusinessBanner";
 import ProductShowcase from "../components/ProductShowCase";
 import TabbedProductDisplay from "../components/ProductDisplay2";
 import dyes from "../assets/Dyes.png";
+import FabricImageBanner from '../components/PurpleFabric';
 
 const Dyes = () => {
     return (
@@ -16,6 +17,7 @@ const Dyes = () => {
                 imageAlt="Collection of colorful pigment bottles"
                 reversed={false}
             />
+            <FabricImageBanner/>
             
             {/* Tabbed product catalog */}
             <section className="py-12 px-4">

@@ -5,6 +5,7 @@ import dyes from "../assets/Dyes.png";
 import Pharma from "../assets/pharma.jpg";
 import construction from "../assets/construction.png";
 import packagingimg from "../assets/packaging.png";
+import img from "../assets/Wt.png";
 
 const Products = () => {   
   // Define product items with placeholder images to match the design   
@@ -28,12 +29,18 @@ const Products = () => {
       text: "CONSTRUCTION CHEMICALS",       
       link: "/products/04",       
       image: construction    
-    },     
+    },  
+    {       
+      text: "WATER TREATMENT CHEMICAL",       
+      link: "/products/06",       
+      image: img   
+    } ,   
     {       
       text: "PACKAGING PRODUCTS",       
       link: "/products/05",       
       image: packagingimg   
-    }   
+    } 
+  
   ];    
 
   return (     

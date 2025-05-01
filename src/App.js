@@ -10,6 +10,7 @@ import ConstructionChemicals from './pages/ConstructionChemicals';
 import ProductPackaging from './pages/ProductPackaging';
 import Dyes from './pages/Dyes';
 import AboutUs from './pages/about';
+import WaterTreatment from './pages/WaterTreatment';
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
         <Route path='/products/04' element={<ConstructionChemicals/>}/>
         <Route path='/products/05' element={<ProductPackaging/>}/>
         <Route path='/products/02' element={<Dyes/>}/>
+        <Route path='/products/06' element={<WaterTreatment/>}/>
       </Routes>
       <Footer/>
     </Router>

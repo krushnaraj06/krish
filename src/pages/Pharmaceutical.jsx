@@ -20,7 +20,7 @@ const Pharmaceutical = () => {
   return (
     <div>
       <ProductShowcase
-        title="PHARMACEUTICAL API"
+        title="PHARMA. API"
         description="At Krish Chemicals LLC, we supply a reliable range of Active Pharmaceutical Ingredients (APIs) and intermediates that meet stringent quality and regulatory standards. Our API portfolio supports formulations for antiseptics, disinfectants, and essential healthcare products"
         additionalText="We source our APIs from certified manufacturers with a strong track record in compliance and consistent production. This ensures purity, efficacy, and batch-to-batch reliability for pharmaceutical companies worldwide. Partner with Krish Chemicals LLC for a dependable API supply chain built on quality, trust, and regulatory excellence."
         imageSrc={Pharma}

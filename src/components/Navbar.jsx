@@ -5,6 +5,7 @@ function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [isProductsDropdownOpen, setIsProductsDropdownOpen] = useState(false);
+  const [isChemicalsOpen, setIsChemicalsOpen] = useState(false);
 
   // Handle scroll effect for navbar
   useEffect(() => {
@@ -42,13 +43,17 @@ function Navbar() {
   }, [isMenuOpen]);
 
   // List of products
-  const products = [
-    { id: "01", name: "PIGMENT" },
-    { id: "02", name: "DYES" },
-    { id: "03", name: "PHARMACEUTICLE" },
-    { id: "04", name: "CONSTRUCTION" },
-    { id: "05", name: "PACKAGING" },
-  ];
+  const products = {
+    chemicals: [
+      { id: "01", name: "PIGMENT" },
+      { id: "02", name: "DYES" },
+      { id: "03", name: "PHARMACEUTICLE API" },
+      { id: "04", name: "CONSTRUCTION CHEMICALS" }
+    ],
+    packaging: [
+      { id: "05", name: "PACKAGING" }
+    ]
+  };
 
   return (
     <header className="w-full fixed top-0 left-0 right-0 z-50 transition-all duration-300 pointer-events-auto">
@@ -85,7 +90,7 @@ function Navbar() {
           <div className="flex-shrink-0 ml-4 md:ml-10 transition-all duration-300">
             <a href="/" className="flex items-center">
               <img 
-                src= {krishlogo} 
+                src={krishlogo} 
                 alt="Krish Chemicals Logo" 
                 className={`${scrolled ? "h-8" : "h-10"} transition-all duration-300`}
               />
@@ -93,11 +98,11 @@ function Navbar() {
           </div>
           
           {/* Navigation Links - right side */}
-          <div className="hidden md:flex items-center space-x-8 mr-10">
+          <div className="hidden md:flex items-center space-x-8 mr-20">
             <NavLink href="/" label="Home" />
             <NavLink href="/about" label="About Us" />
             
-            {/* Products dropdown with hover functionality */}
+            {/* Products dropdown with two-level hover functionality */}
             <div className="relative products-dropdown group">
               <button 
                 className="products-dropdown-toggle relative text-white transition duration-300 py-1 flex items-center"
@@ -117,21 +122,46 @@ function Navbar() {
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
               </button>
               
-              {/* Products dropdown menu - shows on hover */}
+              {/* First level dropdown - Categories */}
               <div 
-                className="absolute top-full left-0 mt-1 w-64 bg-white rounded-md shadow-lg py-2 z-50 transition-all duration-200 opacity-0 invisible transform translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0"
+                className="absolute top-full left-0 mt-1 w-48 bg-white rounded-md shadow-lg py-2 z-50 transition-all duration-200 opacity-0 invisible transform translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0"
                 onMouseLeave={() => setIsProductsDropdownOpen(false)}
                 onBlur={() => setIsProductsDropdownOpen(false)}
               >
-                {products.map((product) => (
-                  <a 
-                    key={product.id}
-                    href={`/products/${product.id}`} 
-                    className="flex items-center px-4 py-3 text-gray-800 hover:bg-gray-100 transition-colors duration-200"
+                {/* Chemicals category with hover effect for second level */}
+                <div className="relative group/chemical px-4 py-3 text-gray-800 hover:bg-gray-100 transition-colors duration-200 cursor-pointer flex justify-between items-center">
+                  Chemicals
+                  <svg 
+                    xmlns="http://www.w3.org/2000/svg" 
+                    className="h-4 w-4 transition-transform" 
+                    fill="none" 
+                    viewBox="0 0 24 24" 
+                    stroke="currentColor"
                   >
-                    {product.name}
-                  </a>
-                ))}
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                  
+                  {/* Second level dropdown - Chemical Products */}
+                  <div className="absolute left-full top-0 w-56 bg-white rounded-md shadow-lg py-2 z-50 transition-all duration-200 opacity-0 invisible transform translate-x-2 group-hover/chemical:opacity-100 group-hover/chemical:visible group-hover/chemical:translate-x-0">
+                    {products.chemicals.map((product) => (
+                      <a 
+                        key={product.id}
+                        href={`/products/${product.id}`} 
+                        className="flex items-center px-4 py-3 text-gray-800 hover:bg-gray-100 transition-colors duration-200"
+                      >
+                        {product.name}
+                      </a>
+                    ))}
+                  </div>
+                </div>
+                
+                {/* Packaging category */}
+                <a 
+                  href="/products/05" 
+                  className="block px-4 py-3 text-gray-800 hover:bg-gray-100 transition-colors duration-200"
+                >
+                  Packaging
+                </a>
               </div>
             </div>
             
@@ -193,18 +223,51 @@ function Navbar() {
               
               {/* Mobile Products Section */}
               <div className="border-t border-teal-400 pt-2 mt-2">
-                <div className="px-4 py-2 text-black text-sm font-medium">Products</div>
-                <div className="pl-4">
-                  {products.map((product) => (
-                    <a 
-                      key={product.id}
-                      href={`/products/${product.id}`} 
-                      onClick={() => setIsMenuOpen(false)}
-                      className="block py-2 px-4 text-sm text-white hover:bg-teal-600 hover:rounded-md transition-all duration-200"
+                <div className="px-4 py-2 text-white text-sm font-medium">Products</div>
+                
+                {/* Chemicals subsection */}
+                <div className="border-t border-teal-400/30 mt-1">
+                  <button 
+                    className="flex justify-between items-center w-full px-4 py-2 text-white text-sm"
+                    onClick={() => setIsChemicalsOpen(!isChemicalsOpen)}
+                  >
+                    <span>Chemicals</span>
+                    <svg 
+                      xmlns="http://www.w3.org/2000/svg" 
+                      className={`h-4 w-4 transition-transform duration-200 ${isChemicalsOpen ? 'rotate-180' : ''}`}
+                      fill="none" 
+                      viewBox="0 0 24 24" 
+                      stroke="currentColor"
                     >
-                      {product.name}
-                    </a>
-                  ))}
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </button>
+                  
+                  {isChemicalsOpen && (
+                    <div className="pl-4">
+                      {products.chemicals.map((product) => (
+                        <a 
+                          key={product.id}
+                          href={`/products/${product.id}`} 
+                          onClick={() => setIsMenuOpen(false)}
+                          className="block py-2 px-4 text-sm text-white hover:bg-teal-600 hover:rounded-md transition-all duration-200"
+                        >
+                          {product.name}
+                        </a>
+                      ))}
+                    </div>
+                  )}
+                </div>
+                
+                {/* Packaging subsection */}
+                <div className="border-t border-teal-400/30 mt-1">
+                  <a 
+                    href="/packaging" 
+                    onClick={() => setIsMenuOpen(false)}
+                    className="block py-2 px-4 text-sm text-white hover:bg-teal-600 hover:rounded-md transition-all duration-200"
+                  >
+                    Packaging
+                  </a>
                 </div>
               </div>
               

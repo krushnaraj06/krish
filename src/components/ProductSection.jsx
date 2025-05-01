@@ -1,34 +1,38 @@
 import React from 'react'; 
-import FlowingMenu from './FlowingMenu'; 
-import profileImage from '../assets/krishlogo.png'; // Using your logo for the product that has an image  
+import FlowingMenu from './FlowingMenu';  
+import imgpigment from "../assets/pigment.png";
+import dyes from "../assets/Dyes.png";
+import Pharma from "../assets/pharma.jpg";
+import construction from "../assets/construction.png";
+import packagingimg from "../assets/packaging.png";
 
 const Products = () => {   
   // Define product items with placeholder images to match the design   
   const productItems = [     
     {       
       text: "PIGMENTS",       
-      link: "/products/pigments",       
-      image: "/api/placeholder/400/200"     
+      link: "/products/01",       
+      image: imgpigment   
     },     
     {       
       text: "DYES",       
-      link: "/products/dyes",       
-      image: profileImage // Using your logo as shown in the image     
+      link: "/products/02",       
+      image: dyes 
     },     
     {       
       text: "PHARMASEUTICAL API",       
-      link: "/products/pharmaceutical-api",       
-      image: "/api/placeholder/400/200"     
+      link: "/products/03",       
+      image: Pharma   
     },     
     {       
       text: "CONSTRUCTION CHEMICALS",       
-      link: "/products/construction-chemicals",       
-      image: "/api/placeholder/400/200"     
+      link: "/products/04",       
+      image: construction    
     },     
     {       
       text: "PACKAGING PRODUCTS",       
-      link: "/products/packaging-products",       
-      image: "/api/placeholder/400/200"     
+      link: "/products/05",       
+      image: packagingimg   
     }   
   ];    
 
@@ -39,7 +43,7 @@ const Products = () => {
         <h2 className="text-3xl md:text-4xl font-bold mb-4">OUR PRODUCTS</h2>       
       </div>              
       {/* Flowing Menu with Products */}       
-      <div className="w-full h-[80vh] bg-white ">         
+      <div className="w-full h-[80vh] bg-white  ">         
         <FlowingMenu items={productItems} />       
       </div>     
     </div>   

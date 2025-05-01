@@ -227,8 +227,8 @@ const ContactUs = () => {
             </svg>
           </div>
           <h3 className="font-bold text-gray-800 uppercase text-sm mb-2">WORKS</h3>
-          <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" className="text-teal-500 text-xs font-medium mt-3" style={{ color: 'rgb(20, 184, 166)' }}>
-            VIEW ON GOOGLE MAP
+          <a href="https://maps.app.goo.gl/uS4ZJyvcehiAJVaK9" target="_blank" rel="noopener noreferrer" className="text-teal-500 text-xs font-medium mt-3" style={{ color: 'rgb(20, 184, 166)' }}>
+          5463 Dierks Dr Rockford, II 61108
           </a>
         </div>
 
@@ -239,8 +239,8 @@ const ContactUs = () => {
             </svg>
           </div>
           <h3 className="font-bold text-gray-800 uppercase text-sm mb-2">LET'S TALK</h3>
-          <a href="tel:+919090547964" className="text-teal-500 text-xs mt-1" style={{ color: 'rgb(20, 184, 166)' }}>+1(267)901880</a>
-          <a href="tel:+919752432907" className="text-teal-500 text-xs mt-1" style={{ color: 'rgb(20, 184, 166)' }}>+1(815)3294126 </a>
+          <a href="tel:+1(267)901880" className="text-teal-500 text-xs mt-1" style={{ color: 'rgb(20, 184, 166)' }}>+1(267)901880</a>
+          <a href="tel:+1(815)3294126" className="text-teal-500 text-xs mt-1" style={{ color: 'rgb(20, 184, 166)' }}>+1(815)3294126 </a>
         </div>
 
         <div className="bg-white rounded-lg shadow-lg p-6 flex flex-col items-center">
@@ -250,8 +250,8 @@ const ContactUs = () => {
             </svg>
           </div>
           <h3 className="font-bold text-gray-800 uppercase text-sm mb-2">E-MAIL US</h3>
-          <a href="mailto:info@yourcompany.com" className="text-teal-500 text-xs mt-3" style={{ color: 'rgb(20, 184, 166)' }}>
-            info@yourcompany.com
+          <a href="mailto:info@krishchemusa.com" className="text-teal-500 text-xs mt-3" style={{ color: 'rgb(20, 184, 166)' }}>
+            info@krishchemusa.com
           </a>
         </div>
       </div>

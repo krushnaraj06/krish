@@ -41,6 +41,9 @@ function Navbar() {
       document.removeEventListener('click', handleClickOutside);
     };
   }, [isMenuOpen]);
+  
+  // Handle hover for chemicals dropdown
+  const [isChemicalsHovered, setIsChemicalsHovered] = useState(false);
 
   // List of products
   const products = {
@@ -54,6 +57,9 @@ function Navbar() {
       { id: "05", name: "PACKAGING" }
     ]
   };
+  
+  // Handle hover states for dropdowns
+  const [isPackagingHovered, setIsPackagingHovered] = useState(false);
 
   return (
     <header className="w-full fixed top-0 left-0 right-0 z-50 transition-all duration-300 pointer-events-auto">
@@ -128,34 +134,49 @@ function Navbar() {
                 onMouseLeave={() => setIsProductsDropdownOpen(false)}
                 onBlur={() => setIsProductsDropdownOpen(false)}
               >
-                {/* Chemicals category with hover effect for second level */}
-                <div className="relative group/chemical px-4 py-3 text-gray-800 hover:bg-gray-100 transition-colors duration-200 cursor-pointer flex justify-between items-center">
-                  Chemicals
-                  <svg 
-                    xmlns="http://www.w3.org/2000/svg" 
-                    className="h-4 w-4 transition-transform" 
-                    fill="none" 
-                    viewBox="0 0 24 24" 
-                    stroke="currentColor"
+                {/* Main Category - Chemicals */}
+                <div 
+                  className="chemicals-menu-item relative"
+                  onMouseEnter={() => setIsChemicalsHovered(true)}
+                  onMouseLeave={() => setIsChemicalsHovered(false)}
+                >
+                  <a
+                    href="#chemicals" 
+                    className="block w-full px-4 py-3 text-gray-800 hover:bg-gray-100 transition-colors duration-200 flex justify-between items-center relative"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setIsChemicalsOpen(!isChemicalsOpen);
+                    }}
                   >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
+                    <span>Chemicals</span>
+                    <svg 
+                      xmlns="http://www.w3.org/2000/svg" 
+                      className={`h-4 w-4 transition-transform duration-200 ${(isChemicalsOpen || isChemicalsHovered) ? 'rotate-180' : ''}`}
+                      fill="none" 
+                      viewBox="0 0 24 24" 
+                      stroke="currentColor"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </a>
                   
-                  {/* Second level dropdown - Chemical Products */}
-                  <div className="absolute left-full top-0 w-56 bg-white rounded-md shadow-lg py-2 z-50 transition-all duration-200 opacity-0 invisible transform translate-x-2 group-hover/chemical:opacity-100 group-hover/chemical:visible group-hover/chemical:translate-x-0">
-                    {products.chemicals.map((product) => (
-                      <a 
-                        key={product.id}
-                        href={`/products/${product.id}`} 
-                        className="flex items-center px-4 py-3 text-gray-800 hover:bg-gray-100 transition-colors duration-200"
-                      >
-                        {product.name}
-                      </a>
-                    ))}
-                  </div>
+                  {/* Chemicals dropdown */}
+                  {(isChemicalsOpen || isChemicalsHovered) && (
+                    <div className="bg-white py-1">
+                      {products.chemicals.map((product) => (
+                        <a 
+                          key={product.id}
+                          href={`/products/${product.id}`} 
+                          className="block px-6 py-2 text-sm text-gray-800 hover:bg-gray-100 transition-colors duration-200"
+                        >
+                          {product.name}
+                        </a>
+                      ))}
+                    </div>
+                  )}
                 </div>
                 
-                {/* Packaging category */}
+                {/* Packaging category - separate menu item */}
                 <a 
                   href="/products/05" 
                   className="block px-4 py-3 text-gray-800 hover:bg-gray-100 transition-colors duration-200"

@@ -28,7 +28,7 @@ const Pharmaceutical = () => {
         reversed={false}
       />
 
-      <FabricImageBanner/>
+
 
       {/* Pharmaceutical Products Table */}
       <div className="max-w-6xl mx-auto px-4 py-16">

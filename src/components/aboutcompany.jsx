@@ -19,13 +19,13 @@ const AboutUs = () => {
             </h2>
             
             {/* About Us button */}
-            <a href="#about" className="inline-block px-10 py-4 bg-teal-500 text-black font-bold rounded-full mb-12 hover:bg-teal-600 transition-colors">
+            <a href="/about" className="inline-block px-10 py-4 bg-teal-500 text-black font-bold rounded-full mb-12 hover:bg-teal-600 transition-colors">
               ABOUT US
             </a>
           </div>
           
           {/* Right side - Tilted card */}
-          <div className=" md:w-1/1 bg-gray-200">
+          <div className=" md:w-1/1 bg-gray-200 ml-[75px]">
             <TiltedCard 
               imageSrc={profileImage}
               altText="Company Profile"

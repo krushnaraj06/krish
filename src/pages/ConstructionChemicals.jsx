@@ -60,13 +60,11 @@ const ConstructionChemicals = () => {
         reversed={false}
       />
 
-      <FabricImageBanner/>
-
       {/* Construction Chemicals Table - Responsive Version */}
       <div className="max-w-6xl mx-auto px-4 py-16">
         <h2 className="text-5xl font-light mb-10">
           <span className="text-gray-600">Construction</span>{" "}
-          <span className="text-yellow-400">Chemical</span>
+          <span className="text-blue-400">Chemical</span>
         </h2>
         
         <div className="overflow-x-auto">
@@ -74,11 +72,11 @@ const ConstructionChemicals = () => {
             <table className="min-w-full">
               <thead>
                 <tr>
-                  <th className="w-12 md:w-16 bg-yellow-400 border border-white text-center py-2 md:py-3 px-2 md:px-4"></th>
-                  <th className="bg-yellow-400 border border-white text-white text-lg md:text-2xl font-normal py-2 md:py-3 px-3 md:px-6 text-left">
+                  <th className="w-12 md:w-16 bg-blue-400 border border-white text-center py-2 md:py-3 px-2 md:px-4"></th>
+                  <th className="bg-blue-400 border border-white text-white text-lg md:text-2xl font-normal py-2 md:py-3 px-3 md:px-6 text-left">
                     PRODUCT NAME
                   </th>
-                  <th className="bg-yellow-400 border border-white text-white text-lg md:text-2xl font-normal py-2 md:py-3 px-3 md:px-6 text-left">
+                  <th className="bg-blue-400 border border-white text-white text-lg md:text-2xl font-normal py-2 md:py-3 px-3 md:px-6 text-left">
                     CHEMICAL NAME
                   </th>
                 </tr>

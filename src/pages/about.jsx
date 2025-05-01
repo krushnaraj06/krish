@@ -48,28 +48,15 @@ const AboutUs = () => {
   {/* Vision Card */}
   <div className="bg-white border-l-4 border-blue-600 rounded shadow-md p-6 transition hover:shadow-lg">
     <h2 className="text-xl font-semibold text-blue-700 mb-4">
-      Our Vision
+      Our Values
     </h2>
     
     <p className="text-gray-700 mb-4">
-      We envision a world where education transcends the confines of textbooks and classrooms. Samarth Public School is committed to fostering a learning environment where students grow into visionary leaders, critical thinkers, and socially responsible citizens.
+    · INTIGRITY – We are ethical and trustworthy in our relationships with all stakeholders.<br/>
+· RELIABILITY – We deliver quality products and services as agreed upon in a consistent manner.<br/>
+· EXCELLENCE – We deliver what we promise and add value that goes beyond what is expected.
     </p>
     
-    <p className="text-gray-700 mb-3">We strive to develop individuals who:</p>
-    <ul className="text-gray-700 space-y-2">
-      <li className="flex">
-        <span className="text-blue-600 mr-2">•</span>
-        <span>Think beyond boundaries – Encouraging creativity, problem-solving, and independent thought.</span>
-      </li>
-      <li className="flex">
-        <span className="text-blue-600 mr-2">•</span>
-        <span>Pursue ethical integrity – Instilling values of respect, dignity, and responsibility towards society.</span>
-      </li>
-      <li className="flex">
-        <span className="text-blue-600 mr-2">•</span>
-        <span>Innovate for a better tomorrow – Empowering students with modern skills and a futuristic mindset.</span>
-      </li>
-    </ul>
   </div>
 
   {/* Mission Card */}
@@ -79,24 +66,11 @@ const AboutUs = () => {
     </h2>
     
     <p className="text-gray-700 mb-4">
-      Our mission is to provide an education that nurtures not only academic excellence but also emotional intelligence, leadership, and global awareness.
+    · To be preferred and trustful supplier of Chemicals and packaging products.<br/>
+· Deliver our promises in safely and responsible manner.<br/>
+· Deliver world class products reliably.<br/>
+· Driving growth through excellence, performance and customer focus.
     </p>
-    
-    <p className="text-gray-700 mb-3">At Samarth Public School, we:</p>
-    <ul className="text-gray-700 space-y-2">
-      <li className="flex">
-        <span className="text-green-600 mr-2">•</span>
-        <span>Inspire lifelong learning – Encouraging curiosity, exploration, and deep knowledge.</span>
-      </li>
-      <li className="flex">
-        <span className="text-green-600 mr-2">•</span>
-        <span>Build Strong Character – Instilling values of honesty, discipline, and empathy.</span>
-      </li>
-      <li className="flex">
-        <span className="text-green-600 mr-2">•</span>
-        <span>Empower Through Holistic Education – Integrating academics, arts, sports, and life skills for all-round development.</span>
-      </li>
-    </ul>
   
          
            

@@ -27,7 +27,7 @@ const ContactUs = () => {
     
     // Example of form submission using fetch API to a backend endpoint
     // You would need to create a backend API to handle this request
-    fetch('/api/contact', {
+    fetch('http://localhost:5000/api/contact', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

@@ -70,7 +70,7 @@ function Navbar() {
     chemicals: [
       { id: "01", name: "PIGMENT" },
       { id: "02", name: "DYES" },
-      { id: "03", name: "PHARMACEUTICLE API" },
+      { id: "03", name: "PHARMACEUTICAL API" },
       { id: "04", name: "CONSTRUCTION CHEMICALS" },
       { id: "06", name: "WATER TREATMENT CHEMICALS" }
     ],

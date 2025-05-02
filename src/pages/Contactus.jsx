@@ -239,7 +239,7 @@ const ContactUs = () => {
             </svg>
           </div>
           <h3 className="font-bold text-gray-800 uppercase text-sm mb-2">LET'S TALK</h3>
-          <a href="tel:+1(267)901880" className="text-teal-500 text-xs mt-1" style={{ color: 'rgb(20, 184, 166)' }}>+1(267)901880</a>
+          <a href="tel:+1(267)901880" className="text-teal-500 text-xs mt-1" style={{ color: 'rgb(20, 184, 166)' }}>+1(267)6901880</a>
           <a href="tel:+1(815)3294126" className="text-teal-500 text-xs mt-1" style={{ color: 'rgb(20, 184, 166)' }}>+1(815)3294126 </a>
         </div>
 
